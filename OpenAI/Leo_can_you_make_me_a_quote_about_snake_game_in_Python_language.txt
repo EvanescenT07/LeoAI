@@ -1,0 +1,4 @@
+Prompt: Leo can you make me a quote about snake game in Python language 
+******************
+
+"Snake game in Python is more than just a game; it's a journey of strategy, skill, and endless growth as you navigate the twists and turns of the virtual world."

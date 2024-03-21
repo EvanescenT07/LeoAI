@@ -1,0 +1,73 @@
+Prompt: make me a good about snake game in Python language 
+******************
+
+Snake Game in Python:
+
+```python
+import pygame
+import random
+
+# Initialize pygame
+pygame.init()
+
+# Colors
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+
+# Screen dimensions
+WIDTH, HEIGHT = 800, 600
+CELL_SIZE = 20
+
+# Initialize screen
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Snake Game")
+
+clock = pygame.time.Clock()
+
+# Snake class
+class Snake:
+    def __init__(self):
+        self.body = [(100, 100)]
+        self.direction = (1, 0)
+    
+    def move(self):
+        head = (self.body[0][0] + self.direction[0] * CELL_SIZE, self.body[0][1] + self.direction[1] * CELL_SIZE)
+        self.body.insert(0, head)
+        self.body.pop()
+    
+    def grow(self):
+        self.body.append(self.body[-1])
+
+    def check_collision(self):
+        if self.body[0][0] < 0 or self.body[0][0] >= WIDTH or self.body[0][1] < 0 or self.body[0][1] >= HEIGHT:
+            return True
+        for i in range(1, len(self.body)):
+            if self.body[0] == self.body[i]:
+                return True
+        return False
+
+# Food class
+class Food:
+    def __init__(self):
+        self.position = (random.randint(0, WIDTH//CELL_SIZE-1) * CELL_SIZE, random.randint(0, HEIGHT//CELL_SIZE-1) * CELL_SIZE)
+    
+    def spawn(self):
+        self.position = (random.randint(0, WIDTH//CELL_SIZE-1) * CELL_SIZE, random.randint(0, HEIGHT//CELL_SIZE-1) * CELL_SIZE)
+
+snake = Snake()
+food = Food()
+
+# Game loop
+running = True
+while running:
+    screen.fill(BLACK)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP and snake.direction != (0, 1):
+                snake.direction = (0, -1)
+            if event.key == pygame.K_DOWN and snake.direction != (0, -1):
+                snake.direction =
