@@ -1,0 +1,4 @@
+Prompt: when we try to open YouTube 
+******************
+
+, we may encounter several factors that could prevent us from accessing the site. Some possible reasons include internet connectivity issues, server downtime on YouTube's end, or restrictions imposed by our network or internet service provider. It is advisable to check for any ongoing outages, ensure the internet connection is stable, and confirm that there are no restrictions or blocks in place before trying to access YouTube again.

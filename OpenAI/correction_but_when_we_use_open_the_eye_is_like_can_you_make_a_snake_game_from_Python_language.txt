@@ -1,0 +1,4 @@
+Prompt: correction but when we use open the eye is like can you make a snake game from Python language 
+******************
+
+Correction: When we say "open the eye," it means having a clear or better understanding. So, in this context, could you create a snake game using the Python language?

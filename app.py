@@ -2,7 +2,7 @@
 import win32com.client
 import speech_recognition as sr
 from openai import OpenAI
-from dotenv import API_KEY
+# from dotenv import load_dotenv
 import webbrowser
 import datetime
 import os
@@ -10,6 +10,9 @@ import os
 # app = Flask(__name__)
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 SAVE_FILE = True
+# load_dotenv()
+# API_KEY = os.getenv('API_KEY')
+API_KEY = open("API_KEY", "r").read()
 
 def say(text):
     speaker.Speak(text)
@@ -30,7 +33,9 @@ def Command():
             return f"Sorry, there was an error with the speech recognition service: {e}"
 
 def ask_ai(user_input):
-    client = OpenAI(api_key=API_KEY)  # Pass API_KEY to OpenAI class
+    client = OpenAI(
+        api_key=API_KEY
+        )  
     text = f"Prompt: {user_input} \n******************\n\n"
     messages = [{"role": "user", "content": user_input}]
     response = client.chat.completions.create(
