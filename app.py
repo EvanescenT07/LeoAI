@@ -1,8 +1,6 @@
-# from flask import Flask, render_template, request, jsonify
 import win32com.client
 import speech_recognition as sr
 from openai import OpenAI
-# from dotenv import load_dotenv
 import webbrowser
 import datetime
 import os
@@ -10,8 +8,6 @@ import os
 # app = Flask(__name__)
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 SAVE_FILE = True
-# load_dotenv()
-# API_KEY = os.getenv('API_KEY')
 API_KEY = open("API_KEY", "r").read()
 
 def say(text):
@@ -54,23 +50,6 @@ def ask_ai(user_input):
 
     say(ai_response)
     return ai_response
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# @app.route('/process_voice_input', methods=['POST'])
-# def process_voice_input():
-#     user_input = request.json.get('user_input')
-#     output = ask_ai(user_input)
-#     return jsonify({'output': output})
-
-# @app.route('/start_listening', methods=['POST'])  # New route for starting speech recognition
-# def start_listening():
-#     say("I'm listening. Please give a command.")
-#     user_input = Command()  # Call the speech recognition function
-#     output = ask_ai(user_input)
-#     return jsonify({'output': output})
 
 if __name__ == '__main__':
     say("Hi.... I'm Leo A.I. I'm your personal assistant. How can I help you?")
