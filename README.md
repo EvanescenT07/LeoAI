@@ -42,7 +42,7 @@ python app.py
 1. Speech Recognition: Speak into your microphone, and the application will convert your speech to text and process it using OpenAI's API.
 2. Opening URLs: You can use specific commands to open predefined URLs in your web browser.
 3. Playing Music: Use commands to play music files stored locally.
-4. etc
+4. etc.
 
 ## Contributing
 
